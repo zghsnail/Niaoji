@@ -13,6 +13,8 @@
 		F8C65E9F1FB0551500B27217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C65E9E1FB0551500B27217 /* Assets.xcassets */; };
 		F8C65EA21FB0551500B27217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C65EA01FB0551500B27217 /* LaunchScreen.storyboard */; };
 		F8C65EA51FB0551500B27217 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C65EA41FB0551500B27217 /* main.m */; };
+		F8C65EAD1FB055A000B27217 /* JusaBluetouth.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C65EAC1FB055A000B27217 /* JusaBluetouth.m */; };
+		F8C65EB01FB055CF00B27217 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C65EAF1FB055C700B27217 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,9 @@
 		F8C65EA11FB0551500B27217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8C65EA31FB0551500B27217 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8C65EA41FB0551500B27217 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F8C65EAB1FB055A000B27217 /* JusaBluetouth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JusaBluetouth.h; sourceTree = "<group>"; };
+		F8C65EAC1FB055A000B27217 /* JusaBluetouth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JusaBluetouth.m; sourceTree = "<group>"; };
+		F8C65EAF1FB055C700B27217 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C65EB01FB055CF00B27217 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +50,7 @@
 			children = (
 				F8C65E941FB0551500B27217 /* Niaoji */,
 				F8C65E931FB0551500B27217 /* Products */,
+				F8C65EAE1FB055C700B27217 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +69,8 @@
 				F8C65E961FB0551500B27217 /* AppDelegate.m */,
 				F8C65E981FB0551500B27217 /* ViewController.h */,
 				F8C65E991FB0551500B27217 /* ViewController.m */,
+				F8C65EAB1FB055A000B27217 /* JusaBluetouth.h */,
+				F8C65EAC1FB055A000B27217 /* JusaBluetouth.m */,
 				F8C65E9B1FB0551500B27217 /* Main.storyboard */,
 				F8C65E9E1FB0551500B27217 /* Assets.xcassets */,
 				F8C65EA01FB0551500B27217 /* LaunchScreen.storyboard */,
@@ -69,6 +78,14 @@
 				F8C65EA41FB0551500B27217 /* main.m */,
 			);
 			path = Niaoji;
+			sourceTree = "<group>";
+		};
+		F8C65EAE1FB055C700B27217 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C65EAF1FB055C700B27217 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C65E9A1FB0551500B27217 /* ViewController.m in Sources */,
+				F8C65EAD1FB055A000B27217 /* JusaBluetouth.m in Sources */,
 				F8C65EA51FB0551500B27217 /* main.m in Sources */,
 				F8C65E971FB0551500B27217 /* AppDelegate.m in Sources */,
 			);

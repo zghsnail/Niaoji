@@ -7,16 +7,31 @@
 //
 
 #import "ViewController.h"
+#import "JusaBluetouth.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<JusaBluetoothManagerDelegate>
+@property (strong, nonatomic) JusaBluetouth *bluetoothManager;
+@property (weak, nonatomic) IBOutlet UITextField *textfield;
+@property (weak, nonatomic) IBOutlet UIButton *sendBtn;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.bluetoothManager = [[JusaBluetouth alloc] init];
+    
+}
+
+- (IBAction)pressSendButton:(id)sender {
+    if (self.textfield.text) {
+        [self.bluetoothManager writeToPeripheral:@"423404ffff0204"];
+    }
+}
+
+- (void)didGetDataForString:(NSString *)dataString {
+    [self.textfield setText:[NSString stringWithFormat:@"Receive:%@",dataString]];
 }
 
 

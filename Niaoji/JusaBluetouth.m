@@ -8,8 +8,7 @@
 
 
 #define kServiceUUID @"0000fff0-0000-1000-8000-00805f9b34fb"
-#define kCharacteristicWriteUUID @"0000fff1-0000-1000-8000-00805f9b34fb"
-#define kCharacteristicNotifyUUID @"0000fff4-0000-1000-8000-00805f9b34fb"
+
 
 #import "JusaBluetouth.h"
 
@@ -32,7 +31,7 @@
     
     [_peripheral writeValue:value forCharacteristic:_writeCharacteristic type:CBCharacteristicWriteWithResponse];
     
-    NSLog(@"已经向外设%@写入数据%@",_peripheral.name,dataString);
+    NSLog(@"已经向外设%@写入数据%@",_peripheral.name,value);
 }
 
 - (instancetype)init{
@@ -57,6 +56,8 @@
         [manager connectPeripheral:peripheral options:nil];
         NSLog(@"连接外设:%@",peripheral.description);
         self.peripheral = peripheral;
+    }else{
+        NSLog(@"%@",peripheral.description);
     }
 }
 
@@ -91,12 +92,11 @@
     
     
     for (CBCharacteristic *characteristic in service.characteristics) {
-        NSLog(@"特征:%@,%@",characteristic.UUID,characteristic.UUID.UUIDString);
+        NSLog(@"特征:%@",characteristic.UUID.UUIDString);
         //发现特征
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FFF1"]]) {
-            
             _writeCharacteristic = characteristic;
-            NSLog(@"_writeCharacteristic%@",_writeCharacteristic.UUID);
+            NSLog(@"_writeCharacteristic:%@",_writeCharacteristic.UUID);
         }
         
         if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"FFF4"]]) {
@@ -119,7 +119,8 @@
     [delegate didGetDataForString:hexStr];
     NSLog(@"%@ value is :%@",characteristic.UUID,hexStr);
     
-    niaojice(hexStr);//解析
+    //IF  NEED COLSE DEVEICE HERE WRITE .
+//    niaojice(hexStr);//解析
     // 80个字段 一次不能发送 分了几次 ...没处理
 }
 
@@ -198,7 +199,7 @@ void niaojice(NSString *hexStr){
     if (hexStr.length < 80) {
         return;
     }
-
+    
     
     // Year
     NSRange rangeyear1 = NSMakeRange(6*2 , 2);

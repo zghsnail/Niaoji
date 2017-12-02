@@ -5,7 +5,10 @@
 //  Created by IOS App on 17/1/6.
 //  Copyright © 2017年 nova. All rights reserved.
 //
-
+//    Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+//
+//    For example, given the array [2,3,-2,4],
+//    the contiguous subarray [2,3] has the largest product = 6.  ????
 
 #define kServiceUUID @"0000fff0-0000-1000-8000-00805f9b34fb"
 
